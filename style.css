@@ -10,10 +10,12 @@
 html, body {
   min-height: 100%;
   height: 100%;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
   background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 80%);
   color: #fff;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ===== CAMADAS DE ONDAS ===== */
@@ -25,7 +27,6 @@ html, body {
   opacity: 0.08;
 }
 
-/* Onda principal */
 .wave {
   width: 500px;
   height: 500px;
@@ -43,7 +44,6 @@ html, body {
   animation: waveReverse 12s linear infinite;
 }
 
-/* Camada extra 1 */
 .wave-layer2 {
   width: 700px;
   height: 700px;
@@ -53,7 +53,6 @@ html, body {
   animation: wave 15s linear infinite;
 }
 
-/* Camada extra 2 */
 .wave-layer3 {
   width: 900px;
   height: 900px;
@@ -63,7 +62,6 @@ html, body {
   animation: waveReverse 18s linear infinite;
 }
 
-/* Keyframes */
 @keyframes wave {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
@@ -79,6 +77,9 @@ html, body {
   margin: 0 auto;
   padding: 40px 20px;
   background: transparent;
+  min-height: 100vh; /* força container a ocupar toda a altura */
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== HEADER ===== */
@@ -154,7 +155,7 @@ header {
 
 /* ===== PROJETOS ===== */
 main {
-  min-height: 100%; /* corrige fundo branco */
+  flex: 1; /* força main a ocupar espaço restante */
   background: transparent;
 }
 
@@ -253,4 +254,5 @@ footer {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
   background: transparent;
+  width: 100%;
 }
