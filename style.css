@@ -8,14 +8,13 @@
 
 /* ===== FUNDO FUTURISTA ===== */
 html, body {
-  min-height: 100%;
   height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 80%);
   color: #fff;
-  position: relative;
-  overflow-x: hidden;
 }
 
 /* ===== CAMADAS DE ONDAS ===== */
@@ -71,15 +70,12 @@ html, body {
   to { transform: rotate(0deg); }
 }
 
-/* ===== CONTAINER ===== */
+/* ===== CONTAINER PRINCIPAL ===== */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background: transparent;
-  min-height: 100vh; /* força container a ocupar toda a altura */
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* ocupa a tela inteira */
+  background: transparent;
 }
 
 /* ===== HEADER ===== */
@@ -153,18 +149,20 @@ header {
   transform: translateY(-3px);
 }
 
-/* ===== PROJETOS ===== */
+/* ===== MAIN ===== */
 main {
-  flex: 1; /* força main a ocupar espaço restante */
+  flex: 1;
   background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ===== PROJETOS ===== */
 main h2 {
   text-align: center;
   color: #7c3aed;
   font-size: 28px;
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin: 60px 0 30px 0;
 }
 
 .grid {
@@ -203,23 +201,18 @@ main h2 {
 .mini-window {
   position: relative;
   width: 100%;
-  height: 200px;
-  overflow: hidden;
+  height: 250px;
   border-radius: 10px;
   box-shadow: 0 0 10px #000;
+  overflow: hidden;
 }
 
 .mini-window iframe {
   width: 100%;
   height: 100%;
   border: none;
-  transition: transform 0.4s ease;
-  pointer-events: auto; /* permite clique e scroll */
+  pointer-events: auto;
   overflow: auto;
-}
-
-.mini-window:hover iframe {
-  transform: scale(1.03);
 }
 
 /* ===== CARD ORÇAMENTO ===== */
