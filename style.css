@@ -16,6 +16,8 @@ html, body {
   background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 100%);
   background-attachment: fixed;
   color: #fff;
+  -webkit-overflow-scrolling: touch; /* suaviza scroll no iOS */
+  overscroll-behavior: none; /* previne efeito “bounce” branco */
 }
 
 /* ===== CAMADAS DE ONDAS ===== */
@@ -25,6 +27,7 @@ html, body {
   filter: blur(80px);
   z-index: -1;
   opacity: 0.08;
+  background-clip: padding-box;
 }
 
 .wave {
@@ -213,7 +216,7 @@ main h2 {
   height: 100%;
   border: none;
   pointer-events: auto;
-  background: transparent; /* Força transparência, se suportado */
+  background: transparent !important;
   scrolling: "yes";
 }
 
@@ -259,5 +262,12 @@ footer {
   }
   .mini-window {
     height: 200px;
+  }
+  html, body {
+    background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 100%);
+    min-height: 100vh;
+  }
+  .wave, .wave-layer2, .wave-layer3, .wave::after {
+    filter: blur(60px);
   }
 }
