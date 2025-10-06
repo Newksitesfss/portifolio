@@ -204,7 +204,7 @@ main h2 {
   height: 250px;
   border-radius: 10px;
   box-shadow: 0 0 10px #000;
-  overflow: auto; /* habilita scroll */
+  overflow: auto;
   background: transparent;
 }
 
@@ -213,7 +213,8 @@ main h2 {
   height: 100%;
   border: none;
   pointer-events: auto;
-  background: transparent; /* iframe transparente se suportado */
+  background: transparent; /* Força transparência, se suportado */
+  scrolling: "yes";
 }
 
 /* ===== CARD ORÇAMENTO ===== */
