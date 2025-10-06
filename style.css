@@ -6,69 +6,47 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ===== FUNDO FUTURISTA ===== */
-html, body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 100%);
-  background-attachment: fixed;
+/* ===== FUNDO ANIMADO ===== */
+body {
+  background: radial-gradient(circle at 20% 20%, #111 0%, #000 80%);
   color: #fff;
-  -webkit-overflow-scrolling: touch; /* suaviza scroll no iOS */
-  overscroll-behavior: none; /* previne efeito “bounce” branco */
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ===== CAMADAS DE ONDAS ===== */
-.wave, .wave::after, .wave-layer2, .wave-layer3 {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1;
-  opacity: 0.08;
-  background-clip: padding-box;
-}
-
+/* Onda principal */
 .wave {
+  position: fixed;
   width: 500px;
   height: 500px;
   background: conic-gradient(from 0deg, #00ffff, transparent, #00ffff);
+  border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: wave 10s linear infinite;
+  opacity: 0.08;
+  z-index: -1;
+  filter: blur(80px);
 }
 
+/* Segunda onda girando ao contrário */
 .wave::after {
   content: '';
+  position: absolute;
   inset: 0;
   background: conic-gradient(from 180deg, #7c3aed, transparent, #7c3aed);
+  border-radius: 50%;
   animation: waveReverse 12s linear infinite;
-}
-
-.wave-layer2 {
-  width: 700px;
-  height: 700px;
-  background: conic-gradient(from 90deg, #ff0080, transparent, #ff0080);
-  top: 40%;
-  left: 60%;
-  animation: wave 15s linear infinite;
-}
-
-.wave-layer3 {
-  width: 900px;
-  height: 900px;
-  background: conic-gradient(from 45deg, #00ffcc, transparent, #00ffcc);
-  top: 60%;
-  left: 40%;
-  animation: waveReverse 18s linear infinite;
+  opacity: 0.08;
 }
 
 @keyframes wave {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
 @keyframes waveReverse {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
@@ -76,10 +54,9 @@ html, body {
 
 /* ===== CONTAINER ===== */
 .container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: transparent;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 /* ===== HEADER ===== */
@@ -90,7 +67,6 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  background: transparent;
 }
 
 .avatar {
@@ -98,7 +74,7 @@ header {
   height: 150px;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
 }
 
@@ -111,10 +87,11 @@ header {
 .hero .name {
   font-size: 32px;
   font-weight: 700;
+  color: #fff;
 }
 
 .role {
-  background: rgba(124,58,237,0.15);
+  background: rgba(124, 58, 237, 0.15);
   color: #7c3aed;
   padding: 6px 12px;
   border-radius: 999px;
@@ -124,10 +101,11 @@ header {
 }
 
 .bio {
-  color: rgba(255,255,255,0.7);
-  margin: 0 auto 15px auto;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
   max-width: 600px;
   line-height: 1.6;
+  margin: 0 auto 15px auto;
 }
 
 .cta {
@@ -137,8 +115,8 @@ header {
 .btn {
   display: inline-block;
   margin: 5px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px 16px;
   border-radius: 10px;
   color: #fff;
@@ -151,21 +129,13 @@ header {
   transform: translateY(-3px);
 }
 
-/* ===== MAIN ===== */
-main {
-  flex: 1;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 /* ===== PROJETOS ===== */
 main h2 {
   text-align: center;
   color: #7c3aed;
   font-size: 28px;
-  margin: 60px 0 30px 0;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .grid {
@@ -176,10 +146,10 @@ main h2 {
 }
 
 .card {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 15px;
   padding: 20px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   text-align: center;
   transition: 0.3s;
@@ -187,7 +157,7 @@ main h2 {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(124,58,237,0.2);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
 }
 
 .card h3 {
@@ -196,53 +166,37 @@ main h2 {
 }
 
 .card p {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 12px;
 }
 
-/* ===== MINI WINDOW INTERATIVA ===== */
+/* ===== MINI WINDOW ===== */
 .mini-window {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 200px;
+  overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px #000;
-  overflow: auto;
-  background: transparent;
 }
 
 .mini-window iframe {
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: auto;
-  background: transparent !important;
-  scrolling: "yes";
+  pointer-events: none;
+  transition: transform 0.4s ease;
 }
 
-/* ===== CARD ORÇAMENTO ===== */
-.budget-card {
-  background: rgba(124,58,237,0.2);
-  border: 1px solid #7c3aed;
-  box-shadow: 0 0 25px rgba(124,58,237,0.5);
-  transition: 0.3s;
+.mini-window a {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
 }
 
-.budget-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 40px rgba(124,58,237,0.8);
-}
-
-.btn-budget {
-  background: #7c3aed;
-  color: #fff;
-  font-weight: 700;
-}
-
-.btn-budget:hover {
-  background: #00ffff;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 15px #00ffff;
+.mini-window:hover iframe {
+  transform: scale(1.03);
 }
 
 /* ===== FOOTER ===== */
@@ -250,24 +204,5 @@ footer {
   margin-top: 60px;
   text-align: center;
   font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  background: transparent;
-  width: 100%;
-}
-
-/* ===== RESPONSIVO ===== */
-@media(max-width:768px) {
-  main h2 {
-    font-size: 24px;
-  }
-  .mini-window {
-    height: 200px;
-  }
-  html, body {
-    background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 100%);
-    min-height: 100vh;
-  }
-  .wave, .wave-layer2, .wave-layer3, .wave::after {
-    filter: blur(60px);
-  }
+  color: rgba(255, 255, 255, 0.6);
 }
