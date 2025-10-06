@@ -11,10 +11,11 @@ html, body {
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 0 40px 0;
   overflow-x: hidden;
   background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 80%);
-  color: # 000000;
+  background-attachment: fixed;
+  color: #fff;
 }
 
 /* ===== CAMADAS DE ONDAS ===== */
@@ -74,7 +75,7 @@ html, body {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ocupa a tela inteira */
+  min-height: 100vh;
   background: transparent;
 }
 
@@ -107,7 +108,6 @@ header {
 .hero .name {
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
 }
 
 .role {
@@ -122,10 +122,9 @@ header {
 
 .bio {
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
   max-width: 600px;
   line-height: 1.6;
-  margin: 0 auto 15px auto;
 }
 
 .cta {
@@ -155,6 +154,7 @@ main {
   background: transparent;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===== PROJETOS ===== */
@@ -202,50 +202,4 @@ main h2 {
   position: relative;
   width: 100%;
   height: 250px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-  overflow: hidden;
-}
-
-.mini-window iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  pointer-events: auto;
-  overflow: auto;
-}
-
-/* ===== CARD ORÇAMENTO ===== */
-.budget-card {
-  background: rgba(124, 58, 237, 0.2);
-  border: 1px solid #7c3aed;
-  box-shadow: 0 0 25px rgba(124, 58, 237, 0.5);
-  transition: 0.3s;
-}
-
-.budget-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.8);
-}
-
-.btn-budget {
-  background: #7c3aed;
-  color: #fff;
-  font-weight: 700;
-}
-
-.btn-budget:hover {
-  background: #00ffff;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 15px #00ffff;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  margin-top: 60px;
-  text-align: center;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  background: transparent;
-  width: 100%;
-}
+  border
