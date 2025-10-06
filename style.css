@@ -8,9 +8,9 @@
 
 /* ===== FUNDO FUTURISTA ===== */
 html, body {
+  min-height: 100%;
   height: 100%;
   overflow-x: hidden;
-  margin: 0;
   background: radial-gradient(circle at 20% 20%, #0a0a0a 0%, #000 80%);
   color: #fff;
   position: relative;
@@ -153,6 +153,11 @@ header {
 }
 
 /* ===== PROJETOS ===== */
+main {
+  min-height: 100%; /* corrige fundo branco */
+  background: transparent;
+}
+
 main h2 {
   text-align: center;
   color: #7c3aed;
@@ -193,6 +198,7 @@ main h2 {
   margin-bottom: 12px;
 }
 
+/* ===== MINI WINDOW INTERATIVA ===== */
 .mini-window {
   position: relative;
   width: 100%;
@@ -207,13 +213,8 @@ main h2 {
   height: 100%;
   border: none;
   transition: transform 0.4s ease;
-}
-
-.mini-window a {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: transparent;
+  pointer-events: auto; /* permite clique e scroll */
+  overflow: auto;
 }
 
 .mini-window:hover iframe {
@@ -251,4 +252,5 @@ footer {
   text-align: center;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
+  background: transparent;
 }
