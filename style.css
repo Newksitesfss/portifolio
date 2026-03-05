@@ -261,30 +261,50 @@ main {
 .cardgit {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza tudo */
+  align-items: center;
   justify-content: center;
 }
 
-.cardgit h3 i {
-  margin-right: 8px;
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.cardgit a.btn-git {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 28px;
+.btn-git, .btn-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 1px;
-  background: #181717;
-  color: #fff;
-  border: 2px solid #333;
   transition: 0.4s ease;
+  border: 2px solid transparent;
 }
 
-.cardgit a.btn-git:hover {
+.btn-git {
+  background: #181717;
+  color: #fff;
+  border-color: #333;
+}
+
+.btn-git:hover {
   background: #24292e;
+  border-color: #00ffff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,255,255,0.4);
+}
+
+.btn-linkedin {
+  background: #0077b5;
+  color: #fff;
+}
+
+.btn-linkedin:hover {
+  background: #00a0dc;
   border-color: #00ffff;
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0,255,255,0.4);
