@@ -482,3 +482,68 @@ footer {
         margin: 5px;
     }
 }
+
+/* ===== CERTIFICADOS SECTION ===== */
+#certificates {
+    padding: 40px 0;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.certificate-card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+    border-color: var(--secondary-color);
+}
+
+.certificate-img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-img img {
+    transform: scale(1.05);
+}
+
+.certificate-info h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.certificate-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
