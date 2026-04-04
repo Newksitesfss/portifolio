@@ -567,3 +567,79 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* ===== GITHUB PROJECT CARDS (NOVO) ===== */
+
+/* Ícone GitHub nos títulos */
+.card h3 i.fa-github {
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+/* Diferenciar projetos GitHub visualmente */
+.card:has(i.fa-github) {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(124, 58, 237, 0.08));
+}
+
+/* Hover mais forte pra projetos técnicos */
+.card:has(i.fa-github):hover {
+  box-shadow: 0 20px 50px rgba(0, 255, 255, 0.25);
+  transform: translateY(-10px) scale(1.01);
+}
+
+/* Overlay no iframe (efeito premium) */
+.mini-window::after {
+  content: 'Clique para ver';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.mini-window:hover::after {
+  opacity: 1;
+}
+
+/* ===== MELHORIA VISUAL EXTRA ===== */
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Seleção de texto estilizada */
+::selection {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Glow leve nos títulos dos cards */
+.card h3 {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Botão extra opcional (se quiser usar depois) */
+.btn-view {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-view:hover {
+  background: var(--secondary-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--secondary-color);
+}
