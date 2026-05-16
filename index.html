@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio-VT</title>
+  <title>Vitor Guilherme — Dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="script.js" defer></script>
@@ -14,153 +14,352 @@
 </head>
 <body>
 
-  <div class="wave"></div>
-  <div class="wave-layer2"></div>
-  <div class="wave-layer3"></div>
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- Ambient glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
 
   <div class="container">
+
+    <!-- ===== HEADER ===== -->
     <header>
-      <div class="avatar">
-        <img src="assets/profile.jpg.png" alt="Foto de Vitor Guilherme">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar">
+          <img src="assets/profile.jpg.png" alt="Foto de Vitor Guilherme">
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span> Disponível para projetos
+        </div>
       </div>
+
       <div class="hero">
-        <h1 class="name">Vitor Guilherme</h1>
-        <span class="role" id="typing-role">Desenvolvedor, apaixonado por codigos</span>
-        <p class="bio">Sou um desenvolvedor dedicado a transformar ideias em experiências digitais incríveis. Trabalho com foco em performance, design e experiência do usuário.</p>
+        <div class="hero-label">Desenvolvedor Web & Automação</div>
+        <h1 class="name">Vitor<br><span class="name-accent">Guilherme</span></h1>
+        <p class="bio">Transformo ideias em experiências digitais com foco em <strong>performance</strong>, <strong>design</strong> e <strong>código limpo</strong>. Cada projeto é uma oportunidade de criar algo incrível.</p>
         <div class="cta">
-          <a href="https://www.instagram.com/_vitorkr" class="btn">Instagram</a>
-          <a href="https://wa.me/5581996744143" class="btn">WhatsApp</a>
+          <a href="https://www.instagram.com/_vitorkr" class="btn btn-outline" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://wa.me/5581996744143" class="btn btn-filled" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
         </div>
       </div>
     </header>
 
+    <!-- ===== SKILLS ===== -->
     <section id="skills">
-      <h2>Minhas Habilidades</h2>
+      <div class="section-header">
+        <span class="section-tag">01 — Habilidades</span>
+        <h2>Stack Técnico</h2>
+      </div>
       <div class="skills-grid">
-        <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
-        <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-        <div class="skill-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-        <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
-        <div class="skill-item"><i class="fas fa-robot"></i><span>n8n (Automação)</span></div>
+        <div class="skill-item" style="--i:0">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item" style="--i:1">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item" style="--i:2">
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item" style="--i:3">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <span>Python</span>
+        </div>
+        <div class="skill-item" style="--i:4">
+          <div class="skill-icon"><i class="fas fa-robot"></i></div>
+          <span>n8n</span>
+        </div>
+        <div class="skill-item" style="--i:5">
+          <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-item" style="--i:6">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <span>SQL</span>
+        </div>
+        <div class="skill-item" style="--i:7">
+          <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+          <span>Git</span>
+        </div>
       </div>
     </section>
 
+    <!-- ===== CERTIFICATES ===== -->
     <section id="certificates">
-      <h2>Certificados</h2>
+      <div class="section-header">
+        <span class="section-tag">02 — Formação</span>
+        <h2>Certificados</h2>
+      </div>
       <div class="certificates-grid">
         <div class="certificate-card">
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
           <div class="certificate-img">
-            <img src="assets/certificado_javascript.png">
+            <img src="assets/certificado_javascript.png" alt="Certificado JavaScript">
           </div>
           <div class="certificate-info">
             <h3>JavaScript e Lógica</h3>
-            <p>Dev Samurai - Dezembro 2025</p>
+            <p><i class="fas fa-building"></i> Dev Samurai</p>
+            <span class="cert-date"><i class="fas fa-calendar-alt"></i> Dezembro 2025</span>
           </div>
         </div>
         <div class="certificate-card">
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
           <div class="certificate-img">
-            <img src="assets/certificado_backend.png">
+            <img src="assets/certificado_backend.png" alt="Certificado Back-end">
           </div>
           <div class="certificate-info">
             <h3>Back-end e Informática</h3>
-            <p>Empregar Cursos - Janeiro 2026</p>
+            <p><i class="fas fa-building"></i> Empregar Cursos</p>
+            <span class="cert-date"><i class="fas fa-calendar-alt"></i> Janeiro 2026</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== PROJECTS ===== -->
     <main id="projects">
-      <h2>Projetos</h2>
-      <div class="grid">
+      <div class="section-header">
+        <span class="section-tag">03 — Trabalhos</span>
+        <h2>Projetos</h2>
+      </div>
 
-        <div class="card">
-          <h3>Portal do Leão</h3>
-          <p>Site moderno e responsivo para notícias sobre o Sport Recife</p>
-          <div class="mini-window">
-            <iframe src="https://portaldoleao.shop/"></iframe>
-            <a href="https://portaldoleao.shop/" target="_blank"></a>
+      <!-- Live Sites -->
+      <div class="projects-category">
+        <div class="category-label"><i class="fas fa-globe"></i> Sites ao Vivo</div>
+        <div class="grid grid-live">
+
+          <div class="card card-live">
+            <div class="card-header">
+              <div class="card-dots"><span></span><span></span><span></span></div>
+              <div class="card-url">portaldoleao.shop</div>
+            </div>
+            <div class="mini-window">
+              <iframe src="https://portaldoleao.shop/" title="Portal do Leão"></iframe>
+              <a href="https://portaldoleao.shop/" target="_blank" aria-label="Abrir Portal do Leão"></a>
+            </div>
+            <div class="card-body">
+              <h3>Portal do Leão</h3>
+              <p>Site moderno e responsivo para notícias sobre o Sport Recife</p>
+              <div class="card-tags">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <a href="https://portaldoleao.shop/" target="_blank" class="btn-view">
+                Ver Projeto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://portaldoleao.shop/" target="_blank" class="btn-view">Ver Projeto</a>
-        </div>
 
-        <div class="card">
-          <h3>Estação do Açaí</h3>
-          <p>Landing page profissional para lanchonetes</p>
-          <div class="mini-window">
-            <iframe src="https://vitorkr1.github.io/estacao-do-acai/"></iframe>
-            <a href="https://vitorkr1.github.io/estacao-do-acai/" target="_blank"></a>
+          <div class="card card-live">
+            <div class="card-header">
+              <div class="card-dots"><span></span><span></span><span></span></div>
+              <div class="card-url">vitorkr1.github.io/estacao-do-acai</div>
+            </div>
+            <div class="mini-window">
+              <iframe src="https://vitorkr1.github.io/estacao-do-acai/" title="Estação do Açaí"></iframe>
+              <a href="https://vitorkr1.github.io/estacao-do-acai/" target="_blank" aria-label="Abrir Estação do Açaí"></a>
+            </div>
+            <div class="card-body">
+              <h3>Estação do Açaí</h3>
+              <p>Landing page profissional para lanchonetes</p>
+              <div class="card-tags">
+                <span>HTML</span><span>CSS</span><span>Responsivo</span>
+              </div>
+              <a href="https://vitorkr1.github.io/estacao-do-acai/" target="_blank" class="btn-view">
+                Ver Projeto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
-          <a href="https://vitorkr1.github.io/estacao-do-acai/" target="_blank" class="btn-view">Ver Projeto</a>
+
         </div>
+      </div>
 
-        <!-- NOVOS PROJETOS -->
+      <!-- GitHub Projects -->
+      <div class="projects-category">
+        <div class="category-label"><i class="fab fa-github"></i> Repositórios GitHub</div>
+        <div class="grid grid-github">
 
-        <div class="card">
-          <h3><i class="fab fa-github"></i> Sistema de Login Completo</h3>
-          <p>Autenticação com Node.js e banco de dados SQL.</p>
-          <div class="mini-window">
-            <img src="https://opengraph.githubassets.com/1/Vitorkr1/Sistema-de-login-universo-completo-Node-html-css-sql" alt="Preview do Repositório" style="width: 100%; height: 100%; object-fit: cover;">
-            <a href="https://github.com/Vitorkr1/Sistema-de-login-universo-completo-Node-html-css-sql" target="_blank"></a>
+          <div class="card card-gh">
+            <div class="gh-preview">
+              <img src="https://opengraph.githubassets.com/1/Vitorkr1/Sistema-de-login-universo-completo-Node-html-css-sql" alt="Sistema de Login">
+            </div>
+            <div class="card-body">
+              <div class="gh-lang"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</div>
+              <h3>Sistema de Login Completo</h3>
+              <p>Autenticação com Node.js e banco de dados SQL, com interface responsiva.</p>
+              <div class="card-tags">
+                <span>Node.js</span><span>SQL</span><span>HTML/CSS</span>
+              </div>
+              <a href="https://github.com/Vitorkr1/Sistema-de-login-universo-completo-Node-html-css-sql" target="_blank" class="btn-view btn-gh">
+                <i class="fab fa-github"></i> Ver Repositório
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Vitorkr1/Sistema-de-login-universo-completo-Node-html-css-sql" target="_blank" class="btn-view">Ver no GitHub</a>
-        </div>
 
-        <div class="card">
-          <h3><i class="fab fa-github"></i> Sistema de Vendas e Estoque</h3>
-          <p>Controle de vendas e gerenciamento de estoque.</p>
-          <div class="mini-window">
-            <img src="https://opengraph.githubassets.com/1/Vitorkr1/sistema-de-supermecado-vendas-estoque" alt="Preview do Repositório" style="width: 100%; height: 100%; object-fit: cover;">
-            <a href="https://github.com/Vitorkr1/sistema-de-supermecado-vendas-estoque" target="_blank"></a>
+          <div class="card card-gh">
+            <div class="gh-preview">
+              <img src="https://opengraph.githubassets.com/1/Vitorkr1/sistema-de-supermecado-vendas-estoque" alt="Sistema de Vendas">
+            </div>
+            <div class="card-body">
+              <div class="gh-lang"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</div>
+              <h3>Sistema de Vendas e Estoque</h3>
+              <p>Controle completo de vendas e gerenciamento de estoque de supermercado.</p>
+              <div class="card-tags">
+                <span>Node.js</span><span>SQL</span><span>CRUD</span>
+              </div>
+              <a href="https://github.com/Vitorkr1/sistema-de-supermecado-vendas-estoque" target="_blank" class="btn-view btn-gh">
+                <i class="fab fa-github"></i> Ver Repositório
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Vitorkr1/sistema-de-supermecado-vendas-estoque" target="_blank" class="btn-view">Ver no GitHub</a>
-        </div>
 
-        <div class="card">
-          <h3><i class="fab fa-github"></i> Conversor de Moedas</h3>
-          <p>Conversão entre moedas como dólar e euro.</p>
-          <div class="mini-window">
-            <img src="https://opengraph.githubassets.com/1/Vitorkr1/projeto-conversao-de-moedas-dolas-euro" alt="Preview do Repositório" style="width: 100%; height: 100%; object-fit: cover;">
-            <a href="https://github.com/Vitorkr1/projeto-conversao-de-moedas-dolas-euro" target="_blank"></a>
+          <div class="card card-gh">
+            <div class="gh-preview">
+              <img src="https://opengraph.githubassets.com/1/Vitorkr1/projeto-conversao-de-moedas-dolas-euro" alt="Conversor de Moedas">
+            </div>
+            <div class="card-body">
+              <div class="gh-lang"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</div>
+              <h3>Conversor de Moedas</h3>
+              <p>Conversão em tempo real entre moedas como dólar, euro e real.</p>
+              <div class="card-tags">
+                <span>API</span><span>JavaScript</span><span>UI</span>
+              </div>
+              <a href="https://github.com/Vitorkr1/projeto-conversao-de-moedas-dolas-euro" target="_blank" class="btn-view btn-gh">
+                <i class="fab fa-github"></i> Ver Repositório
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Vitorkr1/projeto-conversao-de-moedas-dolas-euro" target="_blank" class="btn-view">Ver no GitHub</a>
-        </div>
 
-        <div class="card">
-          <h3><i class="fab fa-github"></i> Sistema Hamburgueria</h3>
-          <p>Sistema para gerenciamento de pedidos.</p>
-          <div class="mini-window">
-            <img src="https://opengraph.githubassets.com/1/Vitorkr1/PROJETO-HAMBUGERIA" alt="Preview do Repositório" style="width: 100%; height: 100%; object-fit: cover;">
-            <a href="https://github.com/Vitorkr1/PROJETO-HAMBUGERIA" target="_blank"></a>
+          <div class="card card-gh">
+            <div class="gh-preview">
+              <img src="https://opengraph.githubassets.com/1/Vitorkr1/PROJETO-HAMBUGERIA" alt="Sistema Hamburgueria">
+            </div>
+            <div class="card-body">
+              <div class="gh-lang"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</div>
+              <h3>Sistema Hamburgueria</h3>
+              <p>Sistema completo para gerenciamento de pedidos de hamburgueria.</p>
+              <div class="card-tags">
+                <span>Node.js</span><span>Pedidos</span><span>CRUD</span>
+              </div>
+              <a href="https://github.com/Vitorkr1/PROJETO-HAMBUGERIA" target="_blank" class="btn-view btn-gh">
+                <i class="fab fa-github"></i> Ver Repositório
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/Vitorkr1/PROJETO-HAMBUGERIA" target="_blank" class="btn-view">Ver no GitHub</a>
+
+          <div class="card card-gh">
+            <div class="gh-preview">
+              <img src="https://opengraph.githubassets.com/fd928561cbd61f1d92aa134d6b7465a22511fdcab54ebac25661f03e8267be23/Vitorkr1/programa-para-lista-palavras-repetida-em-textos" alt="Verificador de Palavras Duplicadas">
+            </div>
+            <div class="card-body">
+              <div class="gh-lang"><span class="lang-dot" style="background:#f1e05a"></span> JavaScript</div>
+              <h3>Verificador de Palavras Duplicadas</h3>
+              <p>CLI em Node.js que lê arquivos .txt, identifica palavras repetidas por parágrafo e exporta o resultado.</p>
+              <div class="card-tags">
+                <span>Node.js</span><span>CLI</span><span>FS</span>
+              </div>
+              <a href="https://github.com/Vitorkr1/programa-para-lista-palavras-repetida-em-textos" target="_blank" class="btn-view btn-gh">
+                <i class="fab fa-github"></i> Ver Repositório
+              </a>
+            </div>
+          </div>
+
         </div>
+      </div>
 
-        <!-- FIM -->
+      <!-- Social + Budget Row -->
+      <div class="grid grid-bottom">
 
-        <div class="card cardgit">
-          <h3><i class="fab fa-github"></i> Redes Sociais</h3>
+        <div class="card card-social">
+          <div class="social-icon-wrap">
+            <i class="fab fa-github fa-2x"></i>
+          </div>
+          <h3>Redes Sociais</h3>
+          <p>Me siga e acompanhe meus projetos</p>
           <div class="social-buttons">
-            <a href="https://github.com/Vitorkr1" target="_blank" class="btn-git">GitHub</a>
-            <a href="https://www.linkedin.com/in/vitor-guilherme-24029139b" target="_blank" class="btn-linkedin">LinkedIn</a>
+            <a href="https://github.com/Vitorkr1" target="_blank" class="btn-git">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/vitor-guilherme-24029139b" target="_blank" class="btn-linkedin">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
           </div>
         </div>
 
         <div class="card budget-card">
-          <h3>Solicite seu orçamento</h3>
-          <p>Quer um site moderno? Fale comigo!</p>
-          <div class="cta">
-            <a href="https://wa.me/5581996744143" class="btn btn-budget">WhatsApp</a>
-          </div>
+          <div class="budget-bg-text">CONTATO</div>
+          <div class="budget-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Solicite seu Orçamento</h3>
+          <p>Quer um site moderno, landing page ou sistema? Vamos conversar!</p>
+          <a href="https://wa.me/5581996744143" target="_blank" class="btn btn-filled btn-budget">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
         </div>
 
       </div>
+
     </main>
 
     <footer>
-      <p>© 2025 Vitor Guilherme</p>
-      <p>Feito com 💜 e muito código.</p>
+      <div class="footer-inner">
+        <div class="footer-logo">VG</div>
+        <div class="footer-text">
+          <p>© 2025 Vitor Guilherme</p>
+          <p>Feito com <span class="heart">💜</span> e muito código.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Vitorkr1" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/vitor-guilherme-24029139b" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/_vitorkr" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/5581996744143" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
     </footer>
+
   </div>
 
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const trail = document.getElementById('cursor-trail');
+    document.addEventListener('mousemove', e => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      setTimeout(() => {
+        trail.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      }, 80);
+    });
+
+    // Hover cursor expand
+    document.querySelectorAll('a, button, .skill-item, .card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-expand'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-expand'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.card, .skill-item, .certificate-card, .section-header');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
